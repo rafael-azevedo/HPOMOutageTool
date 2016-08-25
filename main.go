@@ -5,10 +5,13 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/rafael-azevedo/HPOMOutageTool/database"
 	"github.com/rafael-azevedo/HPOMOutageTool/router"
 )
 
 func main() {
+	log.Println("Starting Server")
+	database.Example()
 	router := router.BuildRouter()
 	srv := &http.Server{
 		Handler:      router,
