@@ -2,8 +2,6 @@ package router
 
 import (
 	"net/http"
-
-	"github.com/rafael-azevedo/HPOMOutageTool/handlers"
 )
 
 type Route struct {
@@ -32,42 +30,42 @@ var routes = Routes{
 		"ListOutage",
 		"GET",
 		"/outage",
-		handlers.ListOutage,
+		ListOutage,
 	},
 	Route{
 		"ListOutageNodes",
 		"GET",
 		"/outage/nodes",
-		handlers.ListOutageNodes,
+		ListOutageNodes,
 	},
 	Route{
 		"ServeHTML",
 		"GET",
 		"/",
-		handlers.ServeHTML,
+		ServeHTML,
 	},
 	Route{
 		"NodeInOutage",
 		"GET",
 		"/outage/{ServerName}",
-		handlers.ListSingleNode,
+		ListSingleNode,
 	},
 	Route{
 		"AssignNode",
 		"GET",
 		"/outage/assign/{ServerName}",
-		handlers.AssignNode,
+		AssignNode,
 	},
 	Route{
 		"DeassignNode",
 		"GET",
 		"/outage/deassign/{ServerName}",
-		handlers.DeassignNode,
+		DeassignNode,
 	},
 	Route{
 		"MultiNode",
 		"POST",
 		"/outage",
-		handlers.ListMultiNode,
+		ListMultiNode,
 	},
 }
